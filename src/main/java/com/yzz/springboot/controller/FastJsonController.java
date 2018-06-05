@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
-
 /**
  * @author Yzz
  */
@@ -47,7 +46,6 @@ public class FastJsonController {
     public Page<TList> getList(int pageNum, int pageSize) {
 
         Pageable pageable = PageRequest.of(pageNum,pageSize);
-
         return listRepository.findAll(pageable);
 
     }
