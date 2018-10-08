@@ -1,8 +1,11 @@
 package com.yzz.springboot.controller;
 
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * @author Yzz
  */
-public  interface  BaseController  {
+@Slf4j
+public    class   BaseController  {
 }

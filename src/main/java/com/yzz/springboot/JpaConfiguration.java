@@ -20,8 +20,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EntityScan(basePackages={"com.yzz.**.bean"})
 
 public class JpaConfiguration {
-    @Bean
-    PersistenceExceptionTranslationPostProcessor persistenceExceptionTranslationPostProcessor(){
-        return new PersistenceExceptionTranslationPostProcessor();
-    }
+//    @Bean
+//    PersistenceExceptionTranslationPostProcessor persistenceExceptionTranslationPostProcessor(){
+//        return new PersistenceExceptionTranslationPostProcessor();
+//    }
 }

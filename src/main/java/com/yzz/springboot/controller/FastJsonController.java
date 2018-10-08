@@ -19,7 +19,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("fastjson")
-public class FastJsonController {
+public class FastJsonController extends BaseController{
 
 
     private final ListRepository listRepository;
@@ -32,7 +32,6 @@ public class FastJsonController {
     @RequestMapping("/test")
     @ResponseBody
     public List<TList> test() {
-
         return listRepository.findAll();
     }
 
@@ -44,7 +43,6 @@ public class FastJsonController {
     @RequestMapping("/testPage")
     @ResponseBody
     public Page<TList> getList(int pageNum, int pageSize) {
-
         Pageable pageable = PageRequest.of(pageNum,pageSize);
         return listRepository.findAll(pageable);
 
