@@ -9,20 +9,36 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
 
+
+
 /**
  * @author Yzz
  */
 @Configuration
 public class WebConfig {
-    @Bean
-    public HttpMessageConverters fastJsonHttpMessageConverters() {
-        FastJsonHttpMessageConverter fastJsonHttpMessageConverter = new FastJsonHttpMessageConverter();
-        FastJsonConfig fastJsonConfig = new FastJsonConfig();
-        fastJsonConfig.setSerializerFeatures(SerializerFeature.PrettyFormat);
 
-        fastJsonHttpMessageConverter.setFastJsonConfig(fastJsonConfig);
+//    @Bean
+//    public HandlerInterceptor getLoginInterceptor(){
+//        return new LoginInterceptor();
+//    }
+//
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry){
+//        registry.addInterceptor(getLoginInterceptor())
+//                .addPathPatterns("/**")
+//                .excludePathPatterns("/error")
+//                .excludePathPatterns("/static/*");
+//    }
+
+
+        @Bean
+        public HttpMessageConverters fastJsonHttpMessageConverters () {
+            FastJsonHttpMessageConverter fastJsonHttpMessageConverter = new FastJsonHttpMessageConverter();
+            FastJsonConfig fastJsonConfig = new FastJsonConfig();
+            fastJsonConfig.setSerializerFeatures(SerializerFeature.PrettyFormat);
+            fastJsonHttpMessageConverter.setFastJsonConfig(fastJsonConfig);
 //        HttpMessageConverter<?> converter = fastJsonHttpMessageConverter;
+            return new HttpMessageConverters((HttpMessageConverter<?>) fastJsonHttpMessageConverter);
 
-        return new HttpMessageConverters((HttpMessageConverter<?>) fastJsonHttpMessageConverter);
     }
 }

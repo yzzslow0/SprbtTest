@@ -24,9 +24,6 @@ public class JpaTestController {
 	@Autowired
 	private UserRepository userRepository;
 
-
-
-
 	@GetMapping("/add")
 	@ResponseBody
 	public Tuser add(){

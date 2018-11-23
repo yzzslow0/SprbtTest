@@ -19,4 +19,11 @@ public class ThymeleafController {
         map.put("img","../imgs/1.png");
         return "homePage";
     }
+
+    @RequestMapping("file")
+    public String file(Map<String,Object> map){
+//        map.put("msg","Hello Thymeleaf");
+//        map.put("img","../imgs/1.png");
+        return "file";
+    }
 }

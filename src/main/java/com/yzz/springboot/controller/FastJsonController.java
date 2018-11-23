@@ -45,6 +45,5 @@ public class FastJsonController extends BaseController{
     public Page<TList> getList(int pageNum, int pageSize) {
         Pageable pageable = PageRequest.of(pageNum,pageSize);
         return listRepository.findAll(pageable);
-
     }
 }
